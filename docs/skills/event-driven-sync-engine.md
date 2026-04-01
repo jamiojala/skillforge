@@ -1,6 +1,6 @@
 ---
-title: Event-Driven Sync Engine
-description: Introduce outbox-driven cross-service communication with reliable publication and eventual consistency safeguards.
+title: "Event-Driven Sync Engine"
+description: "Introduce outbox-driven cross-service communication with reliable publication and eventual consistency safeguards."
 sidebar: false
 aside: false
 outline: false

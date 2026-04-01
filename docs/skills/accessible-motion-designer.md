@@ -1,6 +1,6 @@
 ---
-title: Accessible Motion Designer
-description: Create cinematic motion systems with reduced-motion fallbacks, semantic announcements, and inclusive scroll choreography.
+title: "Accessible Motion Designer"
+description: "Create cinematic motion systems with reduced-motion fallbacks, semantic announcements, and inclusive scroll choreography."
 sidebar: false
 aside: false
 outline: false

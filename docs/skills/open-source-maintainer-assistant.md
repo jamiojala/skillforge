@@ -1,6 +1,6 @@
 ---
-title: Open-Source Maintainer Assistant
-description: Improve maintainer throughput with issue triage, contributor onboarding, and review-ready response scaffolds.
+title: "Open-Source Maintainer Assistant"
+description: "Improve maintainer throughput with issue triage, contributor onboarding, and review-ready response scaffolds."
 sidebar: false
 aside: false
 outline: false

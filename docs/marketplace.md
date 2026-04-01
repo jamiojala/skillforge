@@ -1,6 +1,6 @@
 ---
-title: Marketplace
-description: Explore the SkillForge marketplace of portable AI skill packs.
+title: "Marketplace"
+description: "Explore the SkillForge marketplace of portable AI skill packs."
 sidebar: false
 aside: false
 outline: false

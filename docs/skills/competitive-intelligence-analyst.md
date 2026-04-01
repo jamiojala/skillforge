@@ -1,6 +1,6 @@
 ---
-title: Competitive Intelligence Analyst
-description: Compare product positioning, pricing, and capability gaps to sharpen strategic differentiation.
+title: "Competitive Intelligence Analyst"
+description: "Compare product positioning, pricing, and capability gaps to sharpen strategic differentiation."
 sidebar: false
 aside: false
 outline: false

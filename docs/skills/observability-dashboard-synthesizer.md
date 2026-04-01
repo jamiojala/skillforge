@@ -1,6 +1,6 @@
 ---
-title: Observability Dashboard Synthesizer
-description: Build SLO-aware dashboards and alerts that reveal burn rate, not just raw telemetry volume.
+title: "Observability Dashboard Synthesizer"
+description: "Build SLO-aware dashboards and alerts that reveal burn rate, not just raw telemetry volume."
 sidebar: false
 aside: false
 outline: false

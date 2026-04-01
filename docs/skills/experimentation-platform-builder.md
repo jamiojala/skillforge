@@ -1,6 +1,6 @@
 ---
-title: Experimentation Platform Builder
-description: Design trustworthy experimentation infrastructure with sound randomization, sizing, and interpretation defaults.
+title: "Experimentation Platform Builder"
+description: "Design trustworthy experimentation infrastructure with sound randomization, sizing, and interpretation defaults."
 sidebar: false
 aside: false
 outline: false

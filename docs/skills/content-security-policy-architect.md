@@ -1,6 +1,6 @@
 ---
-title: Content Security Policy Architect
-description: Design nonce- and policy-based browser defenses that meaningfully shrink XSS blast radius.
+title: "Content Security Policy Architect"
+description: "Design nonce- and policy-based browser defenses that meaningfully shrink XSS blast radius."
 sidebar: false
 aside: false
 outline: false

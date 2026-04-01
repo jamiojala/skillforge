@@ -1,6 +1,6 @@
 ---
-title: OWASP Top 10 Guardian
-description: Systematically surface high-probability application security weaknesses across common OWASP failure modes.
+title: "OWASP Top 10 Guardian"
+description: "Systematically surface high-probability application security weaknesses across common OWASP failure modes."
 sidebar: false
 aside: false
 outline: false

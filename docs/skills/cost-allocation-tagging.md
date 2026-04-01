@@ -1,6 +1,6 @@
 ---
-title: Cost Allocation Tagging
-description: Standardize cloud tagging so spend can be attributed cleanly across teams, services, and environments.
+title: "Cost Allocation Tagging"
+description: "Standardize cloud tagging so spend can be attributed cleanly across teams, services, and environments."
 sidebar: false
 aside: false
 outline: false

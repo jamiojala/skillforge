@@ -46,6 +46,7 @@ export default defineConfig({
           { text: 'Quickstart', link: '/quickstart' },
           { text: 'One-Paste Installs', link: '/one-paste-installs' },
           { text: 'Marketplace', link: '/marketplace' },
+          { text: 'SkillForge 2.0', link: '/skillforge-2-0/' },
           { text: 'Safety', link: '/safety' },
           { text: 'Providers', link: '/providers' },
           { text: 'Cost Routing', link: '/cost-routing' },
@@ -87,7 +88,22 @@ export default defineConfig({
           { text: 'Product & UX', link: '/skills-categories/product' },
           { text: 'Content & Communication', link: '/skills-categories/content' },
           { text: 'Business & Operations', link: '/skills-categories/business' },
-          { text: 'AI/ML Engineering', link: '/skills-categories/ai-ml' }
+          { text: 'AI/ML Engineering', link: '/skills-categories/ai-ml' },
+          { text: 'Blockchain & Web3 Engineering', link: '/skills-categories/blockchain' },
+          { text: 'IoT & Edge Computing', link: '/skills-categories/iot' }
+        ]
+      },
+      {
+        text: 'SkillForge 2.0',
+        collapsed: true,
+        items: [
+          { text: 'Overview', link: '/skillforge-2-0/' },
+          { text: 'Package Overview', link: '/skillforge-2-0/package-overview' },
+          { text: 'Living Agent Capabilities', link: '/skillforge-2-0/living-agent-capabilities' },
+          { text: 'Vision', link: '/skillforge-2-0/vision' },
+          { text: 'Marketplace Strategy', link: '/skillforge-2-0/marketplace-strategy' },
+          { text: 'Marketing Plan', link: '/skillforge-2-0/marketing-virality-plan' },
+          { text: 'Final Summary', link: '/skillforge-2-0/final-summary' }
         ]
       },
       {

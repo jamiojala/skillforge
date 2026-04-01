@@ -1,6 +1,6 @@
 ---
-title: DevOps & Infrastructure
-description: Rollouts, platform operations, deploy safety, and environment-aware systems work.
+title: "DevOps & Infrastructure"
+description: "Rollouts, platform operations, deploy safety, and environment-aware systems work."
 sidebar: false
 aside: false
 outline: false

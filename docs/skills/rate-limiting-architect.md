@@ -1,6 +1,6 @@
 ---
-title: Rate-Limiting Architect
-description: Implement distributed rate limiting with token buckets, predictable headers, and production-safe behavior under load.
+title: "Rate-Limiting Architect"
+description: "Implement distributed rate limiting with token buckets, predictable headers, and production-safe behavior under load."
 sidebar: false
 aside: false
 outline: false

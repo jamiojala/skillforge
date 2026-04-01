@@ -5,8 +5,8 @@ This repository includes a complete on-disk skill library for `orchestrator-mcp`
 ## Library shape
 
 - 20 advanced first-party packs
-- 100 Superpower Tier global library packs
-- 120 total skill packs on disk
+- 282 Superpower Tier global library packs
+- 302 total skill packs on disk
 
 ## Every pack includes
 
@@ -17,8 +17,9 @@ This repository includes a complete on-disk skill library for `orchestrator-mcp`
 
 ## Browse on the docs site
 
-- `docs/skills.md` for the library landing page
+- `docs/skills/` for the library landing page
 - `docs/skills-categories/` for category pages grouped for web discovery and SEO
+- `docs/skillforge-2-0/` for the imported SkillForge 2.0 strategy and vision bundle
 
 ## Use packs directly
 

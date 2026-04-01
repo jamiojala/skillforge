@@ -67,6 +67,16 @@ const broadDomains = {
     label: 'AI/ML',
     collectionTitle: 'AI/ML Engineering',
     description: 'Prompt systems, retrieval, evaluation, model operations, and agentic AI infrastructure.'
+  },
+  blockchain: {
+    label: 'Blockchain',
+    collectionTitle: 'Blockchain & Web3 Engineering',
+    description: 'Smart contracts, DeFi primitives, wallet integration, and production Web3 security.'
+  },
+  iot: {
+    label: 'IoT',
+    collectionTitle: 'IoT & Edge Computing',
+    description: 'Device fleets, edge AI, streaming telemetry, and operationally safe IoT systems.'
   }
 }
 
@@ -82,7 +92,9 @@ const categoryPageOrder = [
   'product',
   'content',
   'business',
-  'ai-ml'
+  'ai-ml',
+  'blockchain',
+  'iot'
 ]
 
 const domainQueryOrder = ['all', ...categoryPageOrder]
@@ -419,20 +431,24 @@ function toTitle(value) {
     .join(' ')
 }
 
+function frontmatterString(value) {
+  return JSON.stringify(String(value))
+}
+
 function buildSkillPageMarkdown(skill) {
-  return `---\ntitle: ${skill.name}\ndescription: ${skill.purpose}\nsidebar: false\naside: false\noutline: false\nlastUpdated: false\n---\n\n<SkillDetailPage slug="${skill.slug}" />\n`
+  return `---\ntitle: ${frontmatterString(skill.name)}\ndescription: ${frontmatterString(skill.purpose)}\nsidebar: false\naside: false\noutline: false\nlastUpdated: false\n---\n\n<SkillDetailPage slug="${skill.slug}" />\n`
 }
 
 function buildCatalogPageMarkdown() {
-  return `---\ntitle: Skills\ndescription: Browse the SkillForge catalog of portable AI skill packs.\nsidebar: false\naside: false\noutline: false\n---\n\n<SkillsCatalogPage />\n`
+  return `---\ntitle: ${frontmatterString('Skills')}\ndescription: ${frontmatterString('Browse the SkillForge catalog of portable AI skill packs.')}\nsidebar: false\naside: false\noutline: false\n---\n\n<SkillsCatalogPage />\n`
 }
 
 function buildCategoryPageMarkdown(collection) {
-  return `---\ntitle: ${collection.collectionTitle}\ndescription: ${collection.description}\nsidebar: false\naside: false\noutline: false\n---\n\n<SkillsCollectionPage collection="${collection.slug}" />\n`
+  return `---\ntitle: ${frontmatterString(collection.collectionTitle)}\ndescription: ${frontmatterString(collection.description)}\nsidebar: false\naside: false\noutline: false\n---\n\n<SkillsCollectionPage collection="${collection.slug}" />\n`
 }
 
 function buildMarketplacePageMarkdown() {
-  return `---\ntitle: Marketplace\ndescription: Explore the SkillForge marketplace of portable AI skill packs.\nsidebar: false\naside: false\noutline: false\n---\n\n<SkillsCollectionPage collection="marketplace" />\n`
+  return `---\ntitle: ${frontmatterString('Marketplace')}\ndescription: ${frontmatterString('Explore the SkillForge marketplace of portable AI skill packs.')}\nsidebar: false\naside: false\noutline: false\n---\n\n<SkillsCollectionPage collection="marketplace" />\n`
 }
 
 function main() {

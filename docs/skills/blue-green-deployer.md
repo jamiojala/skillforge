@@ -1,6 +1,6 @@
 ---
-title: Blue-Green Deployer
-description: Automate safer production rollouts with health-aware promotion and rollback triggers.
+title: "Blue-Green Deployer"
+description: "Automate safer production rollouts with health-aware promotion and rollback triggers."
 sidebar: false
 aside: false
 outline: false

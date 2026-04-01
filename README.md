@@ -42,7 +42,7 @@ Browse, inspect, and export standalone skill packs even if you do not want to ru
 - YAML skill registry for reusable routing rules and validation logic
 - Safe git-analysis helpers for commit messages, PR descriptions, and review summaries without mutating the repo
 - Persona-enhanced marketplace packs with explicit role, voice, reasoning, and response-shape metadata on the global-library surface
-- 130 real on-disk skill packs with a 110-skill global marketplace plus 20 advanced first-party packs for teams that want the skills without the full MCP runtime
+- 302 real on-disk skill packs spanning 13 public domains, including 20 advanced first-party packs and the imported SkillForge 2.0 expansion
 
 ## Persona architecture
 
@@ -207,9 +207,10 @@ orchestrator-mcp skills export-category --category security --to ./exported-skil
 
 The marketplace includes:
 
-- a 130-pack on-disk library in `skills/`
-- a 110-skill core marketplace across 11 domains
+- a 302-pack on-disk library in `skills/`
+- 13 public-domain catalog lanes plus advanced first-party packs
 - 20 advanced first-party packs for orchestration, safety, routing, release hygiene, and AI optimization
+- the imported SkillForge 2.0 source bundle preserved in `imports/skillforge-2.0/`
 - standalone packs with `README.md`, `SKILL.md`, `skill.yaml`, and `marketplace.yaml`
 - real folders you can copy individually into Codex, Claude-oriented workflows, or other markdown-first agent setups
 
@@ -226,7 +227,8 @@ orchestrator-mcp cinematic-upgrade --path ./your-project
 ## Repository layout
 
 - `src/orchestrator_mcp/`: core package
-- `skills/`: 130-pack on-disk skill library and portable manifests
+- `skills/`: 302-pack on-disk skill library and portable manifests
+- `imports/skillforge-2.0/`: imported source bundle used to generate the SkillForge 2.0 expansion
 - `examples/`: copy-paste client config examples
 - `docs/`: VitePress site content
 - `tests/`: regression and safety coverage

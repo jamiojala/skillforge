@@ -1,6 +1,6 @@
 ---
-title: Inference Optimization Engineer
-description: Optimize model serving with batching, quantization, streaming, and deployment-aware latency budgets that preserve quality.
+title: "Inference Optimization Engineer"
+description: "Optimize model serving with batching, quantization, streaming, and deployment-aware latency budgets that preserve quality."
 sidebar: false
 aside: false
 outline: false

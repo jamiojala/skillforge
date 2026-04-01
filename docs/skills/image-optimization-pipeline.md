@@ -1,6 +1,6 @@
 ---
-title: Image Optimization Pipeline
-description: Replace naive image usage with responsive pipelines, better formats, and perceptual loading strategies.
+title: "Image Optimization Pipeline"
+description: "Replace naive image usage with responsive pipelines, better formats, and perceptual loading strategies."
 sidebar: false
 aside: false
 outline: false

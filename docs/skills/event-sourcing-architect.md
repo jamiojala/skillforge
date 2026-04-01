@@ -1,6 +1,6 @@
 ---
-title: Event-Sourcing Architect
-description: Transform CRUD-heavy state flows into event-sourced patterns with replayability and time-travel debugging.
+title: "Event Sourcing Architect"
+description: "Design systems where state is derived from immutable event streams, enabling complete audit trails and temporal queries"
 sidebar: false
 aside: false
 outline: false

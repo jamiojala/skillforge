@@ -12,6 +12,15 @@ export default defineConfig({
   appearance: false,
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/skillforge/favicon.svg' }],
+    ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
+    ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
+    [
+      'link',
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap'
+      }
+    ],
     ['meta', { name: 'theme-color', content: '#0d1015' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:title', content: 'SkillForge' }],
@@ -30,18 +39,30 @@ export default defineConfig({
       alt: 'SkillForge'
     },
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Quickstart', link: '/quickstart' },
-      { text: 'Installs', link: '/one-paste-installs' },
-      { text: 'Marketplace', link: '/marketplace' },
-      { text: 'Safety', link: '/safety' },
-      { text: 'About', link: '/about' }
+      { text: 'Skills', link: '/skills/' },
+      {
+        text: 'Docs',
+        items: [
+          { text: 'Quickstart', link: '/quickstart' },
+          { text: 'One-Paste Installs', link: '/one-paste-installs' },
+          { text: 'Marketplace', link: '/marketplace' },
+          { text: 'Safety', link: '/safety' },
+          { text: 'Providers', link: '/providers' },
+          { text: 'Cost Routing', link: '/cost-routing' },
+          { text: 'Dashboard', link: '/dashboard' },
+          { text: 'Benchmarks', link: '/benchmarks' },
+          { text: 'FAQ', link: '/faq' },
+          { text: 'Roadmap', link: '/roadmap' },
+          { text: 'About', link: '/about' }
+        ]
+      },
+      { text: 'GitHub', link: 'https://github.com/jamiojala/skillforge' }
     ],
     sidebar: [
       {
         text: 'Start Here',
         items: [
-          { text: 'Home', link: '/' },
+          { text: 'Skills', link: '/skills/' },
           { text: 'Quickstart', link: '/quickstart' },
           { text: 'One-Paste Installs', link: '/one-paste-installs' },
           { text: 'Marketplace', link: '/marketplace' },
@@ -53,7 +74,7 @@ export default defineConfig({
         text: 'Skills Library',
         collapsed: true,
         items: [
-          { text: 'Overview', link: '/skills' },
+          { text: 'Overview', link: '/skills/' },
           { text: 'Persona Architecture', link: '/persona-architecture' },
           { text: 'Advanced Packs', link: '/skills-categories/advanced-packs' },
           { text: 'Architecture & System Design', link: '/skills-categories/architecture' },
@@ -96,10 +117,6 @@ export default defineConfig({
     docFooter: {
       prev: 'Previous',
       next: 'Next'
-    },
-    footer: {
-      message: 'Apache-2.0 licensed. Built for serious multi-model workflows.',
-      copyright: 'Copyright © 2026 SkillForge contributors'
     }
   }
 })

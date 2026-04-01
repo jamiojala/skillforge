@@ -25,3 +25,14 @@ jobs:
 
       - name: Run repo hygiene scan
         run: python scripts/check_public_repo.py
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Build docs
+        run: |
+          npm ci
+          npm run docs:build

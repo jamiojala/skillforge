@@ -1,5 +1,7 @@
 # One-Paste Installs
 
+Use the Python executable that installed the package. If your machine exposes `python3` instead of `python`, substitute that in the snippets below.
+
 ## Codex
 
 ```bash

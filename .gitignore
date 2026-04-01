@@ -7,12 +7,14 @@ __pycache__/
 .ruff_cache/
 .mypy_cache/
 .venv/
+.venv-docs/
 venv/
 
 # Build
 build/
 dist/
 *.egg-info/
+site/
 
 # Local state
 .env
@@ -31,4 +33,3 @@ logs/
 # IDEs
 .vscode/
 .idea/
-

@@ -1,81 +1,92 @@
 # orchestrator-mcp
 
-`orchestrator-mcp` is a local-first orchestration layer for developers who use more than one coding model or coding agent. It gives Codex, Claude Code, Kimi Code, and other MCP-capable clients a shared MCP server for safe delegation, smart routing, semantic caching, budget-aware fallbacks, and observability.
+Local-first MCP server and portable skill marketplace for serious multi-model coding workflows.
 
-If your workflow already spans Ollama, Gemini, NVIDIA-hosted models, or multiple agent subscriptions, this repo turns that stack into one reusable local tool instead of scattered editor-specific prompt glue.
+`orchestrator-mcp` gives Codex, Claude Code, Kimi Code, and other MCP-capable clients one shared local orchestration layer for safe delegation, model routing, semantic caching, budget-aware fallbacks, and observability.
 
-## Suggested GitHub positioning
+If your workflow already jumps between Codex, Claude Code, Kimi Code, Ollama, Gemini, or NVIDIA-backed reasoning models, this repo turns that stack into one reusable local tool instead of scattered client-specific prompt glue.
 
-- Repository description: `Local-first MCP server for multi-LLM orchestration across Codex, Claude Code, Kimi Code, Ollama, Gemini, and NVIDIA models.`
-- Suggested topics: `mcp`, `model-context-protocol`, `llm`, `multi-agent`, `ollama`, `claude-code`, `codex`, `kimi-code`, `developer-tools`, `ai-tooling`
-- Suggested GitHub Pages URL: `https://jamiojala.github.io/orchestrator-mcp/`
+> Docs: **https://jamiojala.github.io/orchestrator-mcp/**
 
 ## Why this exists
 
-Most coding agents are excellent inside one model silo. Real developer setups are not:
+Most coding agents are strong inside one environment. Real-world developer setups are messier.
 
 - Codex for repo-native implementation
-- Claude Code for long-form reasoning and planning
-- Kimi Code for IDE-first iteration and MCP-rich tooling
-- Ollama or Ollama Pro for cheap open-model capacity
-- Gemini or NVIDIA-hosted specialists for multimodal review and fallback reasoning
+- Claude Code for deeper planning and review
+- Kimi Code for IDE-first iteration and MCP-heavy workflows
+- Ollama for cheap local capacity
+- Gemini or NVIDIA-backed models for multimodal review and specialist fallback
 
 `orchestrator-mcp` gives those workflows one consistent local server surface.
+
+## What it is
+
+This repo works in two modes:
+
+### 1. Local-first MCP server
+
+Run one shared orchestration layer for multiple coding clients and model providers.
+
+### 2. Portable skill marketplace
+
+Browse, inspect, and export standalone skill packs even if you do not want to run the MCP runtime itself.
 
 ## Core features
 
 - Backward-compatible MCP tools including `llm_ask`, `llm_chat`, `dispatch_parallel`, `estimate_complexity`, and `llm_orchestrate`
-- Safety guardrails for secret redaction, malicious prompt blocking, model-name validation, and public-release scanning
-- Cost-aware routing with fallback chains, daily and weekly budget pressure, and Ollama-first "poor man's mode"
+- Cost-aware model routing with fallback chains and budget pressure
 - Semantic caching with local SQLite persistence
-- Streamlit dashboard for recent runs, failures, cache hits, and estimated project spend
+- Safety guardrails for secret redaction, malicious prompt blocking, model-name validation, and public-release scanning
+- Streamlit dashboard for recent runs, cache hits, failures, and estimated spend
 - YAML skill registry for reusable routing rules and validation logic
 - Safe git-analysis helpers for commit messages, PR descriptions, and review summaries without mutating the repo
-- A built-in skill marketplace with browse and export commands for teams that want the skills without the MCP runtime
+- Built-in portable marketplace with browse and export commands for teams that want the skills without the full MCP runtime
 
-## Cheapest default recommendation
+## Why it matters
 
-For most developers, the best cost-to-capability starting point is:
+Without a shared orchestration layer, multi-model setups usually turn into:
 
-1. Local Ollama or Ollama Pro for the bulk of coding and parallel delegation
-2. Gemini for multimodal review and fast cloud fallback
-3. NVIDIA-hosted Kimi or DeepSeek models for reasoning-heavy sidecars
+- duplicated prompts
+- inconsistent routing logic
+- no cost controls
+- no portable skill layer
+- no unified safety checks
+- editor-specific configuration drift
 
-If budget matters most, enable `poor_mans_mode` and route to local/Ollama models first.
+`orchestrator-mcp` fixes that by making orchestration local, inspectable, reusable, and portable.
 
 ## Install
 
-### Python package
+### Standard install
 
 ```bash
 pip install "orchestrator-mcp[dashboard]"
 ```
 
-For contributors:
+### Contributor install
 
 ```bash
 pip install -e ".[dashboard,docs,dev]"
 ```
 
+Use the Python executable that installed the package. If your machine exposes `python3` instead of `python`, substitute that in the snippets below.
+
 ## One-paste installs
 
 ### Codex
-
-If you want a direct command:
 
 ```bash
 codex mcp add orchestrator -- python -m orchestrator_mcp.cli serve
 ```
 
-Config-file snippet:
+Config alternative:
 
 ```toml
 [mcp_servers.orchestrator]
 command = "python"
 args = ["-m", "orchestrator_mcp.cli", "serve"]
 ```
-
-OpenAI documents `codex mcp add` and config-file MCP setup in the Codex docs. Source: [OpenAI Docs MCP quickstart](https://developers.openai.com/learn/docs-mcp).
 
 ### Claude Code
 
@@ -96,30 +107,25 @@ Project config example:
 }
 ```
 
-Anthropic documents `claude mcp add`, `claude mcp list`, scopes, and project-level `.mcp.json` usage in the Claude Code MCP docs.
-
 ### Kimi Code
 
-Kimi Code currently documents local MCP servers through its MCP Servers UI with `stdio` transport.
+Use a local MCP server with:
 
-Paste these values into the Kimi Code MCP server form:
-
-- Name: `orchestrator`
 - Transport: `stdio`
 - Command: `python`
 - Args: `-m orchestrator_mcp.cli serve`
 
-If your Kimi setup exposes raw JSON for local stdio servers, use the same command and args from the examples in [`examples/kimi-stdio.json`](examples/kimi-stdio.json).
-
-Source: [Kimi Code MCP setup docs](https://www.kimi.com/code/docs/en/kimi-code-for-vscode/guides/getting-started.html)
+A raw example is also included in [`examples/kimi-stdio.json`](examples/kimi-stdio.json).
 
 ### Generic MCP client
 
-Any stdio-capable MCP client can launch:
+Any `stdio`-capable MCP client can launch:
 
 ```bash
 python -m orchestrator_mcp.cli serve
 ```
+
+See [`examples/codex-config.toml`](examples/codex-config.toml), [`examples/claude-mcp.json`](examples/claude-mcp.json), and [`examples/kimi-stdio.json`](examples/kimi-stdio.json) for copy-paste starting points.
 
 ## Quick start
 
@@ -136,31 +142,60 @@ Launch the dashboard:
 orchestrator-mcp dashboard
 ```
 
+## Cheapest sensible default
+
+For most developers, the best cost-to-capability starting point is:
+
+1. Ollama or Ollama Pro for most coding and parallel delegation
+2. Gemini for fast multimodal review and cloud fallback
+3. NVIDIA-hosted Kimi or DeepSeek-class models for reasoning-heavy sidecars
+
+If budget matters most, enable `poor_mans_mode` and route to local/Ollama models first.
+
 ## Configuration
 
 Important settings in `orchestrator-mcp.yaml`:
 
-- `budgets.daily_usd` and `budgets.weekly_usd`: keeps model usage under control
-- `budgets.poor_mans_mode`: aggressively prefers cheap/local routes
-- `skills_dir`: loads reusable community skills
-- `pricing`: override the default provider cost table if your pricing differs
-- `models` and `workflows`: project-specific routing policy
+- `budgets.daily_usd` and `budgets.weekly_usd` keep model usage under control
+- `budgets.poor_mans_mode` aggressively prefers cheap or local routes
+- `skills_dir` loads reusable skills
+- `pricing` lets you override provider cost tables
+- `models` and `workflows` define project-specific routing policy
 
 ## Safety model
 
 `orchestrator-mcp` is intentionally narrower than a shell-capable coding agent.
 
-- It does not execute shell commands
-- It does not crawl your filesystem for context
-- It redacts obvious secrets before outbound model calls
-- It blocks clear malware, phishing, and credential-exfiltration requests
-- It includes a release scanner for common leaks such as API keys and absolute local paths
+It:
 
-Run the public-release scan:
+- does not execute shell commands
+- does not crawl your filesystem for context
+- redacts obvious secrets before outbound model calls
+- blocks clear malware, phishing, and credential-exfiltration requests
+- includes a release scanner for common leaks such as API keys and absolute local paths
+
+Run the hygiene scan with:
 
 ```bash
 orchestrator-mcp doctor
 ```
+
+## Use it as a portable skill marketplace
+
+If you only want the skills layer, you can use the repo as a standalone marketplace:
+
+```bash
+orchestrator-mcp skills list
+orchestrator-mcp skills show liquid-glass-enforcer
+orchestrator-mcp skills export liquid-glass-enforcer --to ./exported-skills
+orchestrator-mcp skills export-category --category security --to ./exported-skills
+```
+
+The marketplace includes:
+
+- a 100-skill core catalog across 10 domains
+- curated first-party packs already stored in `skills/`
+- standalone exports with `SKILL.md`, `skill.yaml`, and `marketplace.yaml`
 
 ## CLI
 
@@ -172,60 +207,45 @@ orchestrator-mcp benchmark
 orchestrator-mcp cinematic-upgrade --path ./your-project
 ```
 
-## Skill registry
-
-Skills live in `skills/<slug>/skill.yaml` and can define:
-
-- trigger keywords
-- preferred models
-- prompt templates
-- validation steps
-
-The repo also ships a first-party downloadable skill library. Newer skills include portable `SKILL.md` packs so they can be copied into other agent ecosystems, not just this MCP.
-
-## Skill marketplace
-
-If you only want the skills library, the repo works as a portable marketplace:
-
-```bash
-orchestrator-mcp skills list
-orchestrator-mcp skills show liquid-glass-enforcer
-orchestrator-mcp skills export liquid-glass-enforcer --to ./exported-skills
-orchestrator-mcp skills export-category --category security --to ./exported-skills
-```
-
-The marketplace layer includes:
-
-- a 100-skill core catalog across 10 domains
-- curated first-party packs already stored in `skills/`
-- standalone exports with `SKILL.md`, `skill.yaml`, and `marketplace.yaml`
-
-## Repository contents
+## Repository layout
 
 - `src/orchestrator_mcp/`: core package
-- `skills/`: skill manifests
+- `skills/`: skill manifests and first-party packs
 - `examples/`: copy-paste client config examples
 - `docs/`: MkDocs site content
 - `tests/`: regression and safety coverage
-- `scripts/check_public_repo.py`: release-time hygiene scan
+- `scripts/check_public_repo.py`: public release hygiene scan
 
 ## Development
 
 ```bash
+python3 -m py_compile llm_delegator_mcp.py scripts/check_public_repo.py src/orchestrator_mcp/*.py tests/*.py
 pytest
-python -m py_compile llm_delegator_mcp.py src/orchestrator_mcp/*.py
-python scripts/check_public_repo.py
+python3 scripts/check_public_repo.py
+mkdocs build --strict
 ```
 
 ## Documentation
 
-See [`docs/index.md`](docs/index.md) or serve the site locally:
+The full docs site lives on GitHub Pages:
+
+https://jamiojala.github.io/orchestrator-mcp/
+
+You can also serve docs locally:
 
 ```bash
 mkdocs serve
 ```
 
-GitHub Pages deployment is configured in `.github/workflows/deploy-pages.yml`.
+## Who this is for
+
+This repo is for developers and teams who:
+
+- use more than one coding model
+- want safer local orchestration
+- care about cost control
+- want reusable skills that are not trapped inside one client
+- want a cleaner bridge between MCP runtime and portable agent skills
 
 ## License
 

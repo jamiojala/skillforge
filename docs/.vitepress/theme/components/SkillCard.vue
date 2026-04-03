@@ -1,40 +1,73 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import type { SkillEntry } from '../lib/catalog'
-import { getCatalogFilterUrl, getDomainQueryValue, getSkillUrl } from '../lib/catalog'
+import {
+  getCategoryColor,
+  getDisplayCompatibility,
+  getGitHubPackUrl,
+  getSkillUrl
+} from '../lib/catalog'
+import CompatibilityBadges from './CompatibilityBadges.vue'
+import FeaturedBadge from './FeaturedBadge.vue'
+import SkillIcon from './SkillIcon.vue'
+import SkillStats from './SkillStats.vue'
 
-defineProps<{
-  skill: SkillEntry
-  compact?: boolean
-}>()
+const props = withDefaults(
+  defineProps<{
+    skill: SkillEntry
+    compact?: boolean
+    variant?: 'default' | 'featured' | 'compact' | 'horizontal'
+    featured?: boolean
+  }>(),
+  {
+    compact: false,
+    variant: 'default',
+    featured: false
+  }
+)
+
+const resolvedVariant = computed(() => (props.compact ? 'compact' : props.variant))
+const compatibility = computed(() =>
+  getDisplayCompatibility(props.skill, resolvedVariant.value === 'compact' ? 2 : 4)
+)
+const categoryStyle = computed(() => ({
+  background: getCategoryColor(props.skill.publicDomain === 'ai_ml' ? 'ai-ml' : props.skill.publicDomain)
+}))
 </script>
 
 <template>
-  <article class="sf-skill-card" :class="{ 'sf-skill-card--compact': compact }">
-    <div class="sf-skill-card__topline">
-      <span class="sf-badge">{{ skill.sourceLabel }}</span>
-      <a class="sf-inline-link" :href="getCatalogFilterUrl(getDomainQueryValue(skill))">{{ skill.publicDomainLabel }}</a>
-    </div>
+  <article class="sf-skill-card" :class="`sf-skill-card--${resolvedVariant}`">
+    <span class="sf-skill-card__bar" :style="categoryStyle" />
 
-    <div class="sf-skill-card__body">
-      <h3 class="sf-skill-card__title">
-        <a :href="getSkillUrl(skill.slug)">{{ skill.name }}</a>
-      </h3>
-      <p class="sf-skill-card__purpose">{{ skill.purpose }}</p>
-    </div>
+    <header class="sf-skill-card__header">
+      <div class="sf-skill-card__identity">
+        <SkillIcon :category="skill.publicDomain === 'ai_ml' ? 'ai-ml' : skill.publicDomain" />
 
-    <div class="sf-skill-card__meta">
-      <div class="sf-chip-row">
-        <span v-for="keyword in skill.keywords.slice(0, 3)" :key="keyword" class="sf-chip">
-          {{ keyword }}
-        </span>
+        <div class="sf-skill-card__copy">
+          <div class="sf-skill-card__micro">
+            <FeaturedBadge v-if="featured || skill.featured" />
+            <span class="sf-badge">{{ skill.publicDomainLabel }}</span>
+            <span class="sf-badge sf-badge--muted">{{ skill.sourceLabel }}</span>
+          </div>
+
+          <h3 class="sf-skill-card__title">
+            <a class="sf-skill-card__title-link" :href="getSkillUrl(skill.slug)">{{ skill.name }}</a>
+          </h3>
+        </div>
       </div>
-      <div class="sf-chip-row sf-chip-row--muted">
-        <span v-for="compatibility in skill.compatibility.slice(0, compact ? 2 : 3)" :key="compatibility" class="sf-chip sf-chip--muted">
-          {{ compatibility }}
-        </span>
-      </div>
-    </div>
 
-    <a class="sf-card-link" :href="getSkillUrl(skill.slug)">View skill</a>
+      <a class="sf-card-link" :href="getGitHubPackUrl(skill)">Open pack</a>
+    </header>
+
+    <p class="sf-skill-card__purpose">{{ skill.purpose }}</p>
+
+    <CompatibilityBadges :tools="compatibility" />
+
+    <footer class="sf-skill-card__footer">
+      <SkillStats :skill="skill" />
+      <div class="sf-skill-card__actions">
+        <a class="sf-card-link" :href="getSkillUrl(skill.slug)">View details</a>
+      </div>
+    </footer>
   </article>
 </template>

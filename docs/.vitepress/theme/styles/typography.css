@@ -1,0 +1,99 @@
+html,
+body,
+#app {
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--sf-font-sans);
+  color: var(--sf-c-text-1);
+  background:
+    radial-gradient(circle at top right, rgba(249, 115, 22, 0.08), transparent 24%),
+    radial-gradient(circle at top left, rgba(99, 102, 241, 0.08), transparent 20%),
+    linear-gradient(180deg, var(--sf-c-bg) 0%, var(--sf-c-bg-soft) 100%);
+}
+
+.Layout {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)),
+    radial-gradient(circle at top right, rgba(249, 115, 22, 0.05), transparent 28%);
+}
+
+.vp-doc,
+.vp-doc p,
+.vp-doc li {
+  font-size: var(--sf-text-base);
+  line-height: var(--sf-leading-relaxed);
+  color: var(--sf-c-text-2);
+}
+
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3,
+.vp-doc h4,
+.sf-display,
+.sf-section-heading__title,
+.sf-site-footer h2,
+.sf-site-footer h3 {
+  margin: 0;
+  color: var(--sf-c-text-1);
+  font-family: var(--sf-font-display);
+  letter-spacing: -0.045em;
+}
+
+.vp-doc h1,
+.sf-display {
+  font-size: clamp(3rem, 8vw, var(--sf-text-6xl));
+  line-height: var(--sf-leading-tight);
+}
+
+.vp-doc h2,
+.sf-section-heading__title {
+  font-size: clamp(2rem, 4vw, var(--sf-text-4xl));
+  line-height: 1.02;
+}
+
+.vp-doc h3 {
+  font-size: clamp(1.2rem, 2vw, var(--sf-text-2xl));
+  line-height: var(--sf-leading-snug);
+}
+
+.vp-doc a {
+  color: var(--sf-c-primary);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.16em;
+}
+
+.vp-doc a:hover {
+  color: var(--sf-c-primary-light);
+}
+
+code,
+pre,
+.vp-doc div[class*='language-'] code {
+  font-family: var(--sf-font-mono);
+}
+
+.sf-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sf-space-2);
+  margin: 0;
+  color: var(--sf-c-primary);
+  font-size: var(--sf-text-xs);
+  font-weight: var(--sf-font-bold);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.sf-kicker::before {
+  content: '';
+  width: 1.25rem;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.56;
+}
+
+.sf-muted {
+  color: var(--sf-c-text-3);
+}

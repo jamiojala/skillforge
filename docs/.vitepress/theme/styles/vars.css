@@ -1,0 +1,143 @@
+:root {
+  --sf-font-sans: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+  --sf-font-display: 'Space Grotesk', 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+  --sf-font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --sf-text-xs: 0.75rem;
+  --sf-text-sm: 0.875rem;
+  --sf-text-base: 1rem;
+  --sf-text-lg: 1.125rem;
+  --sf-text-xl: 1.25rem;
+  --sf-text-2xl: 1.5rem;
+  --sf-text-3xl: 1.875rem;
+  --sf-text-4xl: 2.5rem;
+  --sf-text-5xl: 3.75rem;
+  --sf-text-6xl: 5rem;
+
+  --sf-leading-tight: 1.05;
+  --sf-leading-snug: 1.2;
+  --sf-leading-normal: 1.55;
+  --sf-leading-relaxed: 1.75;
+
+  --sf-font-normal: 400;
+  --sf-font-medium: 500;
+  --sf-font-semibold: 600;
+  --sf-font-bold: 700;
+
+  --sf-space-1: 0.25rem;
+  --sf-space-2: 0.5rem;
+  --sf-space-3: 0.75rem;
+  --sf-space-4: 1rem;
+  --sf-space-5: 1.25rem;
+  --sf-space-6: 1.5rem;
+  --sf-space-8: 2rem;
+  --sf-space-10: 2.5rem;
+  --sf-space-12: 3rem;
+  --sf-space-16: 4rem;
+  --sf-space-20: 5rem;
+  --sf-space-24: 6rem;
+
+  --sf-radius-sm: 0.5rem;
+  --sf-radius-md: 0.875rem;
+  --sf-radius-lg: 1.25rem;
+  --sf-radius-xl: 1.75rem;
+  --sf-radius-2xl: 2rem;
+  --sf-radius-full: 999px;
+
+  --sf-shadow-sm: 0 12px 30px rgba(15, 23, 42, 0.08);
+  --sf-shadow-md: 0 18px 44px rgba(15, 23, 42, 0.12);
+  --sf-shadow-lg: 0 24px 70px rgba(15, 23, 42, 0.16);
+  --sf-shadow-glow: 0 0 0 1px rgba(249, 115, 22, 0.1), 0 18px 44px rgba(249, 115, 22, 0.18);
+
+  --sf-transition-fast: 150ms ease;
+  --sf-transition-base: 250ms ease;
+  --sf-transition-slow: 350ms ease;
+
+  --sf-max-width: 1280px;
+  --sf-max-width-wide: 1400px;
+
+  --sf-c-primary: #f97316;
+  --sf-c-primary-light: #fb923c;
+  --sf-c-primary-dark: #ea580c;
+  --sf-c-primary-subtle: rgba(249, 115, 22, 0.12);
+
+  --sf-c-bg: #fcfbf7;
+  --sf-c-bg-soft: #f4f1eb;
+  --sf-c-bg-alt: #efe8de;
+  --sf-c-bg-elevated: rgba(255, 255, 255, 0.82);
+  --sf-c-bg-strong: rgba(255, 255, 255, 0.92);
+
+  --sf-c-text-1: #121217;
+  --sf-c-text-2: #444857;
+  --sf-c-text-3: #707687;
+  --sf-c-border: rgba(18, 18, 23, 0.12);
+  --sf-c-border-subtle: rgba(18, 18, 23, 0.06);
+
+  --sf-c-success: #16a34a;
+  --sf-c-warning: #d97706;
+  --sf-c-error: #dc2626;
+  --sf-c-info: #2563eb;
+
+  --sf-c-advanced: #f97316;
+  --sf-c-architecture: #22c55e;
+  --sf-c-frontend: #06b6d4;
+  --sf-c-backend: #38bdf8;
+  --sf-c-qa: #f59e0b;
+  --sf-c-devops: #ef4444;
+  --sf-c-security: #e11d48;
+  --sf-c-data: #8b5cf6;
+  --sf-c-product: #14b8a6;
+  --sf-c-content: #f97316;
+  --sf-c-business: #a855f7;
+  --sf-c-ai-ml: #6366f1;
+  --sf-c-blockchain: #ec4899;
+  --sf-c-iot: #84cc16;
+
+  --vp-font-family-base: var(--sf-font-sans);
+  --vp-font-family-mono: var(--sf-font-mono);
+  --vp-layout-max-width: 1440px;
+  --vp-nav-height: 72px;
+  --vp-c-brand-1: var(--sf-c-primary);
+  --vp-c-brand-2: var(--sf-c-primary-light);
+  --vp-c-brand-3: var(--sf-c-primary-dark);
+  --vp-c-brand-soft: var(--sf-c-primary-subtle);
+  --vp-c-bg: var(--sf-c-bg);
+  --vp-c-bg-alt: var(--sf-c-bg-soft);
+  --vp-c-bg-elv: var(--sf-c-bg-elevated);
+  --vp-c-bg-soft: var(--sf-c-bg-alt);
+  --vp-c-bg-mute: var(--sf-c-bg-soft);
+  --vp-c-divider: var(--sf-c-border);
+  --vp-c-divider-light: var(--sf-c-border-subtle);
+  --vp-c-gutter: var(--sf-c-border-subtle);
+  --vp-c-text-1: var(--sf-c-text-1);
+  --vp-c-text-2: var(--sf-c-text-2);
+  --vp-c-text-3: var(--sf-c-text-3);
+  --vp-c-text-inverse-1: #f8fafc;
+  --vp-home-hero-name-color: var(--sf-c-primary);
+  --vp-home-hero-image-background-image:
+    radial-gradient(circle at 30% 30%, rgba(249, 115, 22, 0.32), transparent 42%),
+    radial-gradient(circle at 70% 20%, rgba(37, 99, 235, 0.22), transparent 32%);
+  --vp-home-hero-image-filter: blur(62px);
+}
+
+html {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+  --sf-c-bg: #09090b;
+  --sf-c-bg-soft: #111116;
+  --sf-c-bg-alt: #16161c;
+  --sf-c-bg-elevated: rgba(18, 18, 25, 0.84);
+  --sf-c-bg-strong: rgba(20, 20, 29, 0.94);
+  --sf-c-text-1: #f6f4ef;
+  --sf-c-text-2: #cbc4b7;
+  --sf-c-text-3: #8f8b84;
+  --sf-c-border: rgba(255, 255, 255, 0.12);
+  --sf-c-border-subtle: rgba(255, 255, 255, 0.06);
+  --sf-shadow-sm: 0 12px 30px rgba(0, 0, 0, 0.28);
+  --sf-shadow-md: 0 18px 44px rgba(0, 0, 0, 0.38);
+  --sf-shadow-lg: 0 24px 80px rgba(0, 0, 0, 0.48);
+  --sf-shadow-glow: 0 0 0 1px rgba(249, 115, 22, 0.18), 0 22px 60px rgba(249, 115, 22, 0.22);
+}

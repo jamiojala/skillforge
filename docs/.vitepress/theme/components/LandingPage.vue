@@ -64,6 +64,9 @@ const comparisonRows = [
       title="The operating system for AI capabilities."
       lead="Portable skill packs that work with Codex, Claude Code, Kimi Code, and any agent that follows the standard. Open source. Community-readable. Ready to use."
     >
+      <template #title>
+        The <span class="sf-gradient-text--primary">operating system</span><br>for AI capabilities.
+      </template>
       <template #actions>
         <a class="sf-btn sf-btn--primary" :href="getPageUrl('/skills/')">Browse Skills</a>
         <a class="sf-btn sf-btn--secondary" href="https://github.com/jamiojala/skillforge">View on GitHub</a>
@@ -97,7 +100,7 @@ const comparisonRows = [
         </p>
       </div>
 
-      <div class="sf-collection-grid">
+      <div class="sf-bento-grid">
         <a
           v-for="collection in topCollections"
           :key="collection.slug"

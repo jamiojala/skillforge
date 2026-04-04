@@ -8,24 +8,24 @@ import { contributionResources, getPageUrl } from '../lib/catalog'
 
 const contributionSteps = [
   {
-    title: 'Create',
-    body: 'Start from a real skill folder structure with README, SKILL.md, skill.yaml, and marketplace.yaml.'
+    title: 'Fork and create',
+    body: 'Add a folder under skills/ with four files: README.md, SKILL.md, skill.yaml, and marketplace.yaml. That is the entire pack.'
   },
   {
-    title: 'Validate',
-    body: 'Run the repo checks that already protect the public release surface and docs generation path.'
+    title: 'Validate locally',
+    body: 'Run the repo checks before you push. They catch hygiene issues, stale commands, and missing metadata before review.'
   },
   {
-    title: 'Submit',
-    body: 'Open a pull request with a focused pack, clean docs, and commands that reflect how the repo really works.'
+    title: 'Open a PR',
+    body: 'One pack per PR. Include a clear description of what the pack does, who it helps, and why it belongs in the catalog.'
   },
   {
     title: 'Review',
-    body: 'The pack gets checked for clarity, portability, repo hygiene, and whether the contribution stays maintainable.'
+    body: 'The maintainer checks for clarity, portability, honest claims, and long-term maintainability. Most reviews close within days.'
   },
   {
-    title: 'Publish',
-    body: 'Once merged, it becomes part of the generated catalog and the GitHub Pages marketplace surface.'
+    title: 'Ship',
+    body: 'Once merged, your pack appears in the generated catalog, the docs site, and the CLI export surface. Immediately usable.'
   }
 ]
 
@@ -34,35 +34,42 @@ const maintainer = {
   username: 'jamiojala',
   role: 'Maintainer',
   summary:
-    'SkillForge is maintained with a solo-maintainer bias: fewer hidden systems, stronger GitHub-native workflows, and a contribution path that stays legible under real-world load.',
-  stats: ['302 skills on disk', 'GitHub-first workflow', 'MIT licensed'],
-  badges: ['Solo maintained', 'Open source', 'Marketplace pipeline']
+    'SkillForge is solo-maintained by design. The contribution path stays simple because the maintenance path has to stay sustainable. Every process choice reflects that reality.',
+  stats: ['302 packs shipped', 'GitHub-native workflow', 'Apache-2.0 licensed'],
+  badges: ['Solo maintained', 'Open source', 'Fast reviews']
 }
 </script>
 
 <template>
   <div class="sf-page">
     <HeroSection
-      eyebrow="Build"
-      title="Build with SkillForge"
-      lead="Share your AI capabilities through a contribution path that stays simple: real files, public review, and a generated marketplace built from the repo itself."
+      eyebrow="Contribute"
+      title="Fork. Add a pack. Open a PR."
+      lead="The entire contribution workflow runs on GitHub. No CLI tools to install, no accounts to create, no approval queues. Your work ships when it merges."
     >
+      <template #title>
+        Fork. Add a pack.<br><span class="sf-gradient-text--primary">Open a PR.</span>
+      </template>
       <template #actions>
-        <a class="sf-btn sf-btn--primary" href="https://github.com/jamiojala/skillforge">Submit Your First Skill</a>
-        <a class="sf-btn sf-btn--secondary" :href="getPageUrl('/contributing/')">Read the Guide</a>
+        <a class="sf-btn sf-btn--primary" href="https://github.com/jamiojala/skillforge">Start on GitHub</a>
+        <a class="sf-btn sf-btn--secondary" :href="getPageUrl('/contributing/')">Read the Full Guide</a>
       </template>
     </HeroSection>
 
     <section class="sf-shell sf-section">
       <div class="sf-section-heading">
-        <p class="sf-kicker">Contribution process</p>
-        <h2 class="sf-section-heading__title">The workflow stays GitHub-native on purpose.</h2>
+        <p class="sf-kicker">Five steps to a shipped pack</p>
+        <h2 class="sf-section-heading__title">The workflow is simple because it has to be.</h2>
+        <p class="sf-section-heading__lead">
+          A solo-maintained project cannot afford a complex contribution pipeline. This one works.
+        </p>
       </div>
 
       <ProcessSteps
         :steps="contributionSteps"
-        code-example="pytest
-python -m py_compile llm_delegator_mcp.py src/orchestrator_mcp/*.py
+        code-example="# Run these before opening your PR
+pytest
+python -m py_compile src/orchestrator_mcp/*.py
 python scripts/check_public_repo.py
 npm run docs:build"
       />
@@ -70,8 +77,8 @@ npm run docs:build"
 
     <section class="sf-shell sf-section">
       <div class="sf-section-heading">
-        <p class="sf-kicker">Creator resources</p>
-        <h2 class="sf-section-heading__title">Everything needed to write a pack without guessing.</h2>
+        <p class="sf-kicker">Resources</p>
+        <h2 class="sf-section-heading__title">Everything you need to write a strong pack.</h2>
       </div>
 
       <div class="sf-resource-grid">
@@ -88,8 +95,8 @@ npm run docs:build"
 
     <section class="sf-shell sf-section">
       <div class="sf-section-heading">
-        <p class="sf-kicker">Maintainer posture</p>
-        <h2 class="sf-section-heading__title">Built for longevity, not for process theater.</h2>
+        <p class="sf-kicker">Maintainer</p>
+        <h2 class="sf-section-heading__title">One person reviews. Decisions are fast.</h2>
       </div>
 
       <div class="sf-contributor-grid">
@@ -99,9 +106,9 @@ npm run docs:build"
 
     <section class="sf-shell sf-section">
       <SupportCTA
-        title="Want the shortest path from idea to merged pack?"
-        body="Study a strong example, keep the change small, and make the install surface as honest as the code."
-        primary-label="Open Contribution Docs"
+        title="Best way to get started: study a strong pack, then build your own."
+        body="Browse the catalog, pick a pack in your domain, read its manifest, and use the same structure for yours."
+        primary-label="Read the Contribution Guide"
         :primary-href="getPageUrl('/contributing/')"
         secondary-label="Browse Example Packs"
         :secondary-href="getPageUrl('/skills/')"

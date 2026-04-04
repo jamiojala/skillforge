@@ -1,22 +1,27 @@
 ---
 title: "Recognition"
-description: "How SkillForge currently recognizes contributors."
+description: "How SkillForge acknowledges contributors."
 ---
 
 # Recognition
 
-SkillForge is still early, so the recognition model is intentionally simple and real.
+SkillForge is early-stage and solo-maintained. The recognition model is intentionally honest about what it can sustain.
 
-## Current recognition
+## What happens when your pack merges
 
-- Your work lives in the public Git history.
-- Your pack becomes part of the generated marketplace catalog.
-- Strong contributions shape the examples future contributors learn from.
+- **Your work is in the public Git history.** Every commit, every author — permanent and attributable.
+- **Your pack appears in the generated catalog.** Browsable on the docs site, searchable, and exportable via the CLI.
+- **Strong packs become the examples future contributors learn from.** The best contributions shape the standard.
 
-## Likely near-term recognition
+## Coming soon
 
-- Featured examples in docs
-- Sponsor and contributor acknowledgements on the site
-- Roadmap notes when major packs land
+- Featured contributor acknowledgements on the docs site
+- Highlighted packs in release notes
+- Sponsor and contributor wall on the community page
+- Roadmap credit when major packs ship
 
-Recognition should follow real shipped value, not a gamified badge layer that the maintainer cannot keep accurate.
+## What recognition will not become
+
+SkillForge will not add gamification — no badges, points, or leaderboards that the maintainer cannot keep accurate. Recognition follows real shipped value, not engagement theater.
+
+If your work makes the catalog better, it will be visible and attributed. That is the commitment.

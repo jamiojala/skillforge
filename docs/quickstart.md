@@ -1,58 +1,58 @@
 # Quickstart
 
 <p class="omcp-lead">
-  This is the fastest path to a working SkillForge runtime. Install the current
-  <code>orchestrator-mcp</code> package, copy the config, validate the setup, and then wire the server
-  into whichever MCP-capable client you already use.
+  From zero to a running SkillForge instance in under five minutes. Install the package,
+  copy the config, validate, and wire it into your coding agent.
 </p>
 
-## 1. Install the package
+## 1. Install
 
 ```bash
 pip install "orchestrator-mcp[dashboard]"
 ```
 
-::: tip
-If your system exposes `python3` instead of `python`, keep that same executable choice in the install
-examples and client commands.
+::: tip Python version
+If your system uses `python3` instead of `python`, substitute that in every command below.
 :::
 
-## 2. Copy the local config
+## 2. Configure
 
 ```bash
 cp .env.example .env
 cp orchestrator-mcp.yaml.example orchestrator-mcp.yaml
 ```
 
-Fill in only the provider credentials you actually plan to use. A lean config is easier to reason about.
+Add only the provider credentials you actually use. Start lean — you can add more later.
 
-## 3. Validate the environment
+## 3. Validate
 
 ```bash
 orchestrator-mcp doctor
 ```
 
-This catches missing credentials, basic release-hygiene issues, and obvious local setup problems before
-you wire the runtime into a client.
+Catches missing credentials, config issues, and release-hygiene problems before you wire the runtime into a client.
 
-## 4. Start the MCP server
+## 4. Start the server
 
 ```bash
 orchestrator-mcp serve
 ```
 
-At that point, the runtime is ready for Codex, Claude Code, Kimi Code, or any other `stdio`-capable MCP client.
+The runtime is now ready for Codex, Claude Code, Kimi Code, or any `stdio`-capable MCP client.
 
-## 5. Open the optional dashboard
+## 5. Open the dashboard (optional)
 
 ```bash
 orchestrator-mcp dashboard
 ```
 
-Use the dashboard when you want visibility into recent runs, cache behavior, failures, and estimated spend.
+Live view of recent runs, cache behavior, failures, and estimated spend across all providers.
 
-## Recommended next steps
+## What to do next
 
-- go to [One-Paste Installs](./one-paste-installs) if you want the exact client wiring
-- go to [Marketplace](./marketplace) if you only want the portable skill layer
-- go to [Safety](./safety) if you want the operating model and guardrails first
+| Goal | Page |
+|---|---|
+| Wire into Codex, Claude Code, or Kimi Code | [One-Paste Installs](./one-paste-installs) |
+| Just use the skill packs without the runtime | [Skills Catalog](/skills/) |
+| Understand the safety model first | [Safety](./safety) |
+| Contribute a pack | [Contribute](./contribute) |

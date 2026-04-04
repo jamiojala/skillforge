@@ -64,7 +64,7 @@ const columns = [
     </div>
 
     <div class="sf-site-footer__bottom">
-      <p>© 2026 SkillForge. Open source under MIT License.</p>
+      <p>© 2026 SkillForge. Open source under Apache-2.0 License.</p>
       <div class="sf-site-footer__legal">
         <a :href="getPageUrl('/privacy')">Privacy</a>
         <a :href="getPageUrl('/terms')">Terms</a>

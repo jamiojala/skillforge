@@ -23,20 +23,23 @@ const refreshedAt = new Intl.DateTimeFormat('en-US', {
   <div class="sf-page sf-page--discover">
     <HeroSection
       eyebrow="Discover"
-      title="Find the packs worth installing next."
-      lead="Start with featured packs, explore advanced first-party surfaces, and move through the catalog by domain instead of by guesswork."
+      title="Start here. Find what matters."
+      lead="Curated picks, first-party packs, and every domain lane in one place. No scrolling through a flat list hoping to find the right one."
     >
+      <template #title>
+        Start here.<br><span class="sf-gradient-text--primary">Find what matters.</span>
+      </template>
       <template #actions>
-        <a class="sf-btn sf-btn--primary" :href="getPageUrl('/skills/')">Open Catalog</a>
-        <a class="sf-btn sf-btn--secondary" :href="getPageUrl('/contribute')">Build with SkillForge</a>
+        <a class="sf-btn sf-btn--primary" :href="getPageUrl('/skills/')">Open Full Catalog</a>
+        <a class="sf-btn sf-btn--secondary" :href="getPageUrl('/quickstart')">Quickstart Guide</a>
       </template>
     </HeroSection>
 
     <section class="sf-shell sf-section">
       <div class="sf-section-heading">
-        <p class="sf-kicker">Staff picks</p>
-        <h2 class="sf-section-heading__title">A focused slice of the strongest public-facing packs.</h2>
-        <p class="sf-section-heading__lead">Current catalog refresh: {{ refreshedAt }}.</p>
+        <p class="sf-kicker">Curated picks</p>
+        <h2 class="sf-section-heading__title">Packs that consistently deliver. Start with these.</h2>
+        <p class="sf-section-heading__lead">Last catalog refresh: {{ refreshedAt }}.</p>
       </div>
 
       <SkillGrid :skills="featuredSkills" :featured-ids="featuredSkills.slice(0, 1).map((skill) => skill.slug)" />
@@ -44,8 +47,12 @@ const refreshedAt = new Intl.DateTimeFormat('en-US', {
 
     <section class="sf-shell sf-section">
       <div class="sf-section-heading">
-        <p class="sf-kicker">Advanced packs</p>
-        <h2 class="sf-section-heading__title">First-party surfaces for orchestration, safety, evaluation, and routing.</h2>
+        <p class="sf-kicker">First-party packs</p>
+        <h2 class="sf-section-heading__title">Built by the maintainer. Orchestration, safety, routing, and evaluation.</h2>
+        <p class="sf-section-heading__lead">
+          These packs are written and maintained directly by the SkillForge team. They handle the
+          infrastructure-level concerns that most community packs don't cover.
+        </p>
       </div>
 
       <SkillGrid :skills="advancedPacks" :columns="3" />
@@ -53,8 +60,8 @@ const refreshedAt = new Intl.DateTimeFormat('en-US', {
 
     <section class="sf-shell sf-section">
       <div class="sf-section-heading">
-        <p class="sf-kicker">Category map</p>
-        <h2 class="sf-section-heading__title">Browse the public domains that organize the whole library.</h2>
+        <p class="sf-kicker">All {{ siteCatalog.collections.length }} domains</p>
+        <h2 class="sf-section-heading__title">Browse by what you build, not by what was added last.</h2>
       </div>
 
       <div class="sf-collection-grid">
@@ -67,19 +74,19 @@ const refreshedAt = new Intl.DateTimeFormat('en-US', {
           <span class="sf-collection-card__count">{{ collection.count }}</span>
           <h3>{{ collection.collectionTitle }}</h3>
           <p>{{ collection.description }}</p>
-          <span class="sf-card-link">Open lane</span>
+          <span class="sf-card-link">Browse domain</span>
         </a>
       </div>
     </section>
 
     <section class="sf-shell sf-section">
       <SupportCTA
-        title="Need the full browse surface?"
-        body="The main catalog gives you search, domain filters, source filtering, and client compatibility in one place."
-        primary-label="Browse All Skills"
+        title="Want the full catalog experience?"
+        body="Search, filter by domain, filter by source, check client compatibility — all in one surface."
+        primary-label="Browse All {{ siteCatalog.stats.totalSkills }}+ Skills"
         :primary-href="getPageUrl('/skills/')"
-        secondary-label="Quickstart"
-        :secondary-href="getPageUrl('/quickstart')"
+        secondary-label="Contribute a Pack"
+        :secondary-href="getPageUrl('/contribute')"
       />
     </section>
   </div>

@@ -1,29 +1,34 @@
 ---
 title: "Review Process"
-description: "How SkillForge pull requests get evaluated."
+description: "How SkillForge pull requests are evaluated and what helps them merge faster."
 ---
 
-# Review process
+# Review Process
 
-SkillForge reviews should stay lightweight and clear.
+SkillForge is solo-maintained. Reviews are fast because the bar is clear and the process is simple.
 
-## What reviewers look for
+## What the maintainer checks
 
-- Does the pack solve a real problem clearly?
-- Is the behavior portable enough for the marketplace claim?
-- Do the docs and commands match reality?
-- Does the change fit the repo without adding avoidable maintenance cost?
+1. **Does the pack solve a real problem?** If the use case is not obvious within 10 seconds of reading the README, it needs work.
+2. **Is it portable?** Packs that only work in one client need a strong justification for being in a portable catalog.
+3. **Do the docs match reality?** Commands, examples, and install instructions must reflect how the repo actually works today.
+4. **Is it maintainable?** Will this pack still make sense in six months without constant updates?
 
-## What helps your pull request
+## What helps your PR merge faster
 
-- One skill or one focused improvement per PR
-- Honest examples instead of inflated claims
-- Passing checks
-- Clear explanation of what changed and why
+- **One pack per PR.** Focused changes review faster and merge cleaner.
+- **Honest examples.** Show what the pack actually does, not what you wish it did.
+- **Passing checks.** Run `pytest`, the compile check, the repo hygiene scan, and `npm run docs:build` before submitting.
+- **Clear description.** Explain what changed, why it matters, and who benefits.
 
 ## What slows review down
 
-- Mixed unrelated changes
-- Missing docs or stale commands
+- Mixed unrelated changes in one PR
+- Missing or stale documentation
 - Hidden assumptions about proprietary tools
-- Public repo hygiene issues
+- Packs that duplicate existing catalog entries without explaining the improvement
+- Public repo hygiene issues (leaked paths, credentials, or local-only references)
+
+## Timeline
+
+Most reviews close within a few days. Complex packs or packs in unfamiliar domains may take longer. If your PR sits without feedback for more than a week, ping the maintainer — it is not intentional.

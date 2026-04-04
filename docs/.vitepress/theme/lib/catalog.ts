@@ -42,23 +42,23 @@ export const categoryColors: Record<string, string> = {
 export const homepageStats: CounterStat[] = [
   {
     value: siteCatalog.stats.totalSkills,
-    label: 'Skills',
-    caption: 'Portable packs ready to inspect and export'
+    label: 'Skill packs',
+    caption: 'Inspectable manifests you can export or install'
   },
   {
     value: siteCatalog.stats.publicDomains,
     label: 'Domains',
-    caption: 'Clear browsing lanes instead of a prompt pile'
+    caption: 'From frontend to security to AI/ML'
   },
   {
     value: siteCatalog.stats.advancedPacks,
-    label: 'Advanced packs',
-    caption: 'First-party surfaces for routing, safety, and orchestration'
+    label: 'First-party packs',
+    caption: 'Routing, safety, orchestration, and release hygiene'
   },
   {
     value: primaryClients.length,
-    label: 'Client surfaces',
-    caption: 'Codex, Claude Code, Kimi Code, and orchestrator-mcp'
+    label: 'Supported clients',
+    caption: 'Codex · Claude Code · Kimi Code · MCP runtime'
   }
 ]
 export const supportReasons = [

@@ -1,87 +1,84 @@
-# About
+# About SkillForge
 
 <p class="omcp-lead">
-  SkillForge exists because serious coding workflows are already multi-model, multi-client, and
-  operationally messy by default. The project gives that mess a cleaner public product surface while
-  the runtime package stays truthfully named <code>orchestrator-mcp</code>.
+  SkillForge exists because real developer workflows already span multiple models and clients —
+  and the skills you write for one should not be trapped inside it.
 </p>
 
-## Why this repo exists
+## The problem
 
-Most real developer setups already split work across tools and models:
+Most developers now use more than one coding agent:
 
-- Codex for repo-native implementation
-- Claude Code for planning and review
-- Kimi Code for IDE-first iteration
-- Ollama for cheap local or subscription-backed open-model capacity
-- Gemini and NVIDIA-backed models for multimodal review and reasoning-heavy sidecars
+- **Codex** for repo-native implementation
+- **Claude Code** for planning, review, and complex reasoning
+- **Kimi Code** for IDE-first iteration and MCP-heavy workflows
+- **Ollama** for cheap local capacity
+- **Gemini** and **NVIDIA-backed models** for multimodal review and reasoning fallback
 
-The problem is not access. The problem is coordination. Without a shared layer, teams end up with
-duplicated prompts, inconsistent routing, weak cost discipline, and skills that get trapped inside
-whichever client happened to be used first.
+The problem is not access. It is coordination. Without a shared layer, teams end up with duplicated prompts, inconsistent routing, no cost controls, and skills that get trapped inside whichever client happened to be used first.
+
+SkillForge fixes that.
 
 ## What the project optimizes for
 
 <div class="omcp-grid omcp-grid--two">
   <article class="omcp-panel">
     <p class="omcp-label">Local-first</p>
-    <h3>Keep orchestration close to the repo</h3>
+    <h3>Orchestration you can inspect</h3>
     <p>
-      Routing, fallback logic, caching, and safety checks should be inspectable and controllable by
-      the team using them.
+      Routing, fallback logic, caching, and safety checks run locally. You see exactly what happens
+      and why.
     </p>
   </article>
   <article class="omcp-panel">
     <p class="omcp-label">Portable</p>
-    <h3>Keep the skills reusable</h3>
+    <h3>Skills that move between clients</h3>
     <p>
-      The pack format is designed to travel between ecosystems instead of locking valuable workflow
-      knowledge inside one client.
+      The pack format is designed to travel. Write once, use across Codex, Claude Code, Kimi Code,
+      and any MCP-capable client.
     </p>
   </article>
   <article class="omcp-panel">
-    <p class="omcp-label">Visible</p>
-    <h3>Keep tradeoffs explicit</h3>
+    <p class="omcp-label">Transparent</p>
+    <h3>Every tradeoff is visible</h3>
     <p>
-      Budget pressure, fallback behavior, and release hygiene should be visible operating choices,
-      not hidden side effects.
+      Budget pressure, fallback behavior, safety constraints, and routing decisions are explicit
+      operating choices — not hidden side effects.
     </p>
   </article>
   <article class="omcp-panel">
     <p class="omcp-label">Practical</p>
-    <h3>Keep adoption friction low</h3>
+    <h3>Low adoption friction</h3>
     <p>
-      Standard <code>stdio</code> installs, straightforward config, and exportable packs matter more than demo
-      theatrics.
+      Standard stdio installs. Straightforward config. Exportable packs. Working software matters
+      more than demo theatrics.
     </p>
   </article>
 </div>
 
 ## Two products in one repo
 
-### 1. Local-first MCP server
+### 1. Local-first MCP runtime
 
-Run one shared orchestration layer across supported clients with routing, safety, semantic caching,
-budget-aware fallback, and observability.
+Run one shared orchestration layer across multiple coding clients with cost-aware routing, semantic caching, safety guardrails, budget controls, and a Streamlit dashboard.
 
 ### 2. Portable skill marketplace
 
-Browse, inspect, and export standalone skill packs with `SKILL.md`, `skill.yaml`, `marketplace.yaml`,
-and `README.md`, even if you do not want to run the runtime itself.
+Browse, inspect, and export 302 standalone skill packs — even if you never run the runtime. Every pack is a real folder with SKILL.md, skill.yaml, marketplace.yaml, and README.md.
 
-## What it is not
+## What SkillForge is not
 
-- not a shell-capable agent that blindly executes local commands
-- not a single-model ideology project
-- not a private prompt library disguised as product
-- not a marketplace that only exists as runtime export output
+- Not a shell-capable agent that executes local commands
+- Not a single-model ideology project
+- Not a private prompt library disguised as a product
+- Not a marketplace that only exists as runtime output
 
 ## Who this is for
 
-This repo is a strong fit if you:
+SkillForge is a strong fit if you:
 
-- use more than one coding model or agent client
-- want a local layer you can inspect and control
-- care about budget pressure and fallback behavior
-- want reusable skill packs that can travel between ecosystems
-- want the public docs to feel like a product surface, not internal notes
+- Use more than one coding model or agent client
+- Want a local orchestration layer you can inspect and control
+- Care about cost discipline and fallback behavior
+- Want reusable skill packs that travel between ecosystems
+- Expect public docs that feel like a product, not internal notes

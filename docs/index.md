@@ -1,7 +1,8 @@
 ---
 title: SkillForge
 titleTemplate: false
-description: "The operating system for AI capabilities: portable skill packs plus local-first orchestration for serious multi-model teams."
+description: "One skill library for every coding agent: portable skill packs plus local-first orchestration for serious multi-model teams."
+layout: page
 sidebar: false
 aside: false
 outline: false

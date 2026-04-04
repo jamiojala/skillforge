@@ -4,7 +4,7 @@ export default defineConfig({
   title: 'SkillForge',
   titleTemplate: ':title | SkillForge',
   description:
-    'The operating system for AI capabilities: a portable skill marketplace and local-first orchestration layer for serious multi-model workflows.',
+    'One skill library for every coding agent: 302 portable skill packs plus local-first orchestration for multi-model workflows.',
   lang: 'en-US',
   base: '/skillforge/',
   lastUpdated: true,
@@ -41,7 +41,7 @@ export default defineConfig({
       {
         property: 'og:description',
         content:
-          'Portable skill packs, open-source docs, and a local orchestration layer for teams shipping with multiple coding agents.'
+          '302 portable skill packs for Codex, Claude Code, Kimi Code, and any MCP-capable client. Browse, install, export. Open source.'
       }
     ]
   ],

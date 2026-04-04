@@ -7,21 +7,21 @@ import { getPageUrl, homepageStats } from '../lib/catalog'
 
 const communityResources = [
   {
-    eyebrow: 'GitHub',
+    eyebrow: 'Collaborate',
     title: 'Issues and pull requests',
-    body: 'SkillForge collaboration happens in the open today, directly in the repo.',
+    body: 'Every decision, every discussion, every review happens in the open on GitHub. No private Slack, no hidden Jira board.',
     href: 'https://github.com/jamiojala/skillforge'
   },
   {
-    eyebrow: 'Roadmap',
-    title: 'What ships next',
-    body: 'Track the planned direction, product gaps, and docs work without waiting for private updates.',
+    eyebrow: 'Direction',
+    title: 'Public roadmap',
+    body: 'See what ships next, what is being considered, and what the project is deliberately not building.',
     href: getPageUrl('/roadmap')
   },
   {
-    eyebrow: 'Support',
-    title: 'Why sponsorship matters',
-    body: 'Funding helps the catalog stay fast, polished, and actively maintained without a paywall.',
+    eyebrow: 'Sustainability',
+    title: 'Sponsor the work',
+    body: 'SkillForge has no corporate backer. Sponsorship is how the catalog stays maintained, the docs stay current, and the project stays independent.',
     href: getPageUrl('/support')
   }
 ]
@@ -31,9 +31,9 @@ const maintainer = {
   username: 'jamiojala',
   role: 'Maintainer',
   summary:
-    'The current community surface is intentionally small: GitHub-first collaboration, readable docs, and a workflow that can grow without collapsing under solo maintenance.',
-  stats: [`${homepageStats[0].value} skills`, `${homepageStats[1].value} public domains`, 'One generated catalog'],
-  badges: ['Open source', 'GitHub Pages', 'Solo-maintainer friendly']
+    'SkillForge is solo-maintained by design. The community surface stays small and real — GitHub-first, readable, and built to grow without collapsing under operations overhead.',
+  stats: [`${homepageStats[0].value} skill packs`, `${homepageStats[1].value} domains`, 'Apache-2.0 licensed'],
+  badges: ['Open source', 'GitHub Pages', 'Solo-maintained']
 }
 </script>
 
@@ -41,9 +41,12 @@ const maintainer = {
   <div class="sf-page">
     <HeroSection
       eyebrow="Community"
-      title="Built in public, designed to stay legible."
-      lead="SkillForge does not pretend to have a giant community machine behind it. The current community surface is GitHub-native, transparent, and meant to scale honestly."
+      title="Small by design. Transparent by default."
+      lead="SkillForge doesn't pretend to have a community team. What it has is a public repo, honest docs, and a contribution path that works."
     >
+      <template #title>
+        Small by design.<br><span class="sf-gradient-text--primary">Transparent by default.</span>
+      </template>
       <template #actions>
         <a class="sf-btn sf-btn--primary" href="https://github.com/jamiojala/skillforge">Join on GitHub</a>
         <a class="sf-btn sf-btn--secondary" :href="getPageUrl('/contribute')">Contribute a Pack</a>
@@ -52,8 +55,12 @@ const maintainer = {
 
     <section class="sf-shell sf-section">
       <div class="sf-section-heading">
-        <p class="sf-kicker">Where collaboration happens</p>
-        <h2 class="sf-section-heading__title">Today’s community layer is intentionally small and real.</h2>
+        <p class="sf-kicker">How we work</p>
+        <h2 class="sf-section-heading__title">Everything happens in public. No exceptions.</h2>
+        <p class="sf-section-heading__lead">
+          No private channels, no invite-only discussions, no hidden roadmap. If it affects the project,
+          it is visible on GitHub.
+        </p>
       </div>
 
       <div class="sf-resource-grid">
@@ -70,8 +77,8 @@ const maintainer = {
 
     <section class="sf-shell sf-section">
       <div class="sf-section-heading">
-        <p class="sf-kicker">Maintainer context</p>
-        <h2 class="sf-section-heading__title">Designed for momentum without hidden operations overhead.</h2>
+        <p class="sf-kicker">Who maintains this</p>
+        <h2 class="sf-section-heading__title">One maintainer. Clear ownership. Fast decisions.</h2>
       </div>
 
       <div class="sf-contributor-grid">
@@ -81,11 +88,11 @@ const maintainer = {
 
     <section class="sf-shell sf-section">
       <SupportCTA
-        title="Want to help the community surface grow?"
-        body="The fastest wins are still simple: contribute a pack, improve the docs, file a focused issue, or sponsor the maintenance work."
-        primary-label="Build with SkillForge"
+        title="The best way to grow this community is to ship."
+        body="Contribute a pack. Improve the docs. File a focused issue. Or sponsor the maintenance that keeps everything running."
+        primary-label="Start Contributing"
         :primary-href="getPageUrl('/contribute')"
-        secondary-label="Support the Infrastructure"
+        secondary-label="Become a Sponsor"
         :secondary-href="getPageUrl('/support')"
       />
     </section>

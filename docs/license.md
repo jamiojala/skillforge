@@ -5,7 +5,7 @@ description: "License information for SkillForge."
 
 # License
 
-SkillForge is open source under the MIT License.
+SkillForge is open source under the Apache-2.0 License.
 
 - Repository license: [LICENSE](https://github.com/jamiojala/skillforge/blob/main/LICENSE)
 - Security policy: [SECURITY.md](https://github.com/jamiojala/skillforge/blob/main/SECURITY.md)

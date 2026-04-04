@@ -8,7 +8,7 @@ description: Imported package overview for the SkillForge 2.0 source bundle.
   <img src="https://img.shields.io/badge/Skills-250+-brightgreen?style=for-the-badge&logo=skillshare" alt="250+ Skills">
   <img src="https://img.shields.io/badge/Domains-13-blue?style=for-the-badge&logo=appveyor" alt="13 Domains">
   <img src="https://img.shields.io/badge/Mega--Skills-7-purple?style=for-the-badge&logo=rocket" alt="7 Mega-Skills">
-  <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" alt="MIT License">
+  <img src="https://img.shields.io/badge/License-Apache--2.0-blue?style=for-the-badge" alt="Apache-2.0 License">
   <img src="https://img.shields.io/badge/npm-v2.0.0-red?style=for-the-badge&logo=npm" alt="npm v2.0.0">
 </p>
 
@@ -438,7 +438,7 @@ SkillForge Enterprise includes:
 
 ## 📜 License
 
-SkillForge is released under the [MIT License](https://github.com/jamiojala/skillforge/blob/main/LICENSE).
+SkillForge is released under the [Apache-2.0 License](https://github.com/jamiojala/skillforge/blob/main/LICENSE).
 
 ---
 

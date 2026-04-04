@@ -1,6 +1,7 @@
 ---
 title: "Community"
-description: "How SkillForge collaboration works today, in public and without hidden operations overhead."
+description: "How SkillForge collaboration works today — GitHub-native, transparent, and built to scale honestly."
+layout: page
 sidebar: false
 aside: false
 outline: false

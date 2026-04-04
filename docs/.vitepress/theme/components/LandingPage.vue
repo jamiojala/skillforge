@@ -20,16 +20,16 @@ const topCollections = [...siteCatalog.collections].sort((left, right) => right.
 
 const processSteps = [
   {
-    title: 'Browse',
-    body: 'Pick from 302 skill packs across 14 domains. Every pack has a readable manifest — no hidden prompt blobs.'
+    title: 'Browse the catalog',
+    body: '302 packs across 14 domains. Each one has a readable manifest with role, voice, reasoning steps, and validation hooks.'
   },
   {
     title: 'Install or export',
-    body: 'Run the MCP runtime for full orchestration, or export individual packs into any markdown-first workflow.'
+    body: 'Run the full MCP runtime for orchestration, cost routing, and safety checks — or just export individual packs into your existing workflow.'
   },
   {
-    title: 'Ship',
-    body: 'Compose packs with explicit triggers, model preferences, and validation hooks. Version everything on GitHub.'
+    title: 'Ship with confidence',
+    body: 'Compose packs with explicit triggers and model preferences. Everything is versioned on GitHub. No magic, no lock-in.'
   }
 ]
 
@@ -37,22 +37,22 @@ const comparisonRows = [
   {
     label: 'Portability',
     other: 'Skills locked to one client or proprietary marketplace.',
-    skillforge: 'SKILL.md + YAML packs that move freely between Codex, Claude Code, Kimi Code, and more.'
+    skillforge: 'SKILL.md + YAML manifests that work across Codex, Claude Code, Kimi Code, and any MCP client.'
   },
   {
     label: 'Transparency',
-    other: 'Opaque prompt blobs you cannot inspect or audit.',
-    skillforge: 'Every pack has a readable manifest with role, voice, reasoning steps, and validation hooks.'
+    other: 'Opaque prompt blobs you cannot read, inspect, or audit before installing.',
+    skillforge: 'Readable manifests with role, voice, reasoning steps, validation hooks, and file targets.'
   },
   {
     label: 'Contributing',
-    other: 'Closed catalogs or complex submission pipelines.',
-    skillforge: 'Fork, add a pack, open a PR. GitHub is the entire workflow.'
+    other: 'Closed catalogs, proprietary review pipelines, or no contribution path at all.',
+    skillforge: 'Fork the repo, add a pack folder, open a PR. GitHub is the entire workflow.'
   },
   {
     label: 'Cost',
-    other: 'Paywalls, subscription tiers, or duplicated per-client setups.',
-    skillforge: 'Free, open-source, MIT licensed. No gatekeeping.'
+    other: 'Paywalls, subscription tiers, or skills duplicated across every client.',
+    skillforge: 'Free forever. Open source under Apache-2.0. No gatekeeping, no surprises.'
   }
 ]
 </script>
@@ -60,7 +60,7 @@ const comparisonRows = [
 <template>
   <div class="sf-page">
     <HeroSection
-      eyebrow="Open-source · 302 skills · MIT licensed"
+      eyebrow="Open-source · 302 skills · Apache-2.0"
       title="One skill library for every coding agent."
       lead="Portable skill packs for Codex, Claude Code, Kimi Code, and any MCP-capable client. Browse, install, export. No vendor lock-in."
     >
@@ -79,10 +79,10 @@ const comparisonRows = [
     <section class="sf-shell sf-section">
       <div class="sf-section-heading">
         <p class="sf-kicker">Featured packs</p>
-        <h2 class="sf-section-heading__title">Real skills you can inspect before you install.</h2>
+        <h2 class="sf-section-heading__title">Read the manifest before you install.</h2>
         <p class="sf-section-heading__lead">
-          Every pack ships with a readable manifest — role, voice, reasoning steps, validation hooks.
-          No prompt blobs.
+          Every pack is a real folder with structured metadata — not a prompt blob behind a paywall.
+          Inspect it, fork it, improve it.
         </p>
       </div>
 
@@ -94,9 +94,9 @@ const comparisonRows = [
     <section class="sf-shell sf-section">
       <div class="sf-section-heading">
         <p class="sf-kicker">14 domains</p>
-        <h2 class="sf-section-heading__title">Organized by what you actually build.</h2>
+        <h2 class="sf-section-heading__title">Find what you need in seconds, not minutes.</h2>
         <p class="sf-section-heading__lead">
-          Not a flat list. Clear lanes from frontend to security to AI/ML so you find what you need fast.
+          Skills organized by what you build — frontend, backend, security, AI/ML, DevOps, and more. Not a flat list you have to scroll through.
         </p>
       </div>
 
@@ -119,12 +119,12 @@ const comparisonRows = [
     <section class="sf-shell sf-section">
       <aside class="sf-support-nudge">
         <div class="sf-support-nudge__content">
-          <p class="sf-support-nudge__eyebrow">Built by one maintainer, used by many</p>
-          <h2 class="sf-support-nudge__title">This project runs on sponsorship, not VC money.</h2>
+          <p class="sf-support-nudge__eyebrow">Solo-maintained, community-supported</p>
+          <h2 class="sf-support-nudge__title">No VC funding. No corporate sponsor. Just one developer and the people who use this.</h2>
           <p class="sf-support-nudge__body">
-            SkillForge is maintained in the open by a solo developer. Every skill pack, every docs page,
-            every safety check — built and shipped without corporate backing. If this saves your team time,
-            a sponsorship keeps it alive.
+            Every pack, every doc page, every safety check is built and shipped by a single maintainer.
+            Sponsorship is what keeps 302 packs from going stale. If SkillForge saves your team time,
+            consider making that sustainable.
           </p>
           <div class="sf-inline-actions">
             <a class="sf-btn sf-btn--primary" href="https://github.com/sponsors/jamiojala">Sponsor on GitHub</a>
@@ -151,7 +151,7 @@ const comparisonRows = [
     <section class="sf-shell sf-section">
       <div class="sf-section-heading">
         <p class="sf-kicker">Get started</p>
-        <h2 class="sf-section-heading__title">Two ways in: run the runtime, or just grab the packs.</h2>
+        <h2 class="sf-section-heading__title">Full runtime or just the packs — your call.</h2>
       </div>
 
       <ProcessSteps
@@ -165,7 +165,7 @@ orchestrator-mcp skills export liquid-glass-enforcer --to ./skillforge-packs"
     <section class="sf-shell sf-section">
       <div class="sf-section-heading">
         <p class="sf-kicker">Why SkillForge</p>
-        <h2 class="sf-section-heading__title">Skills should be infrastructure, not disposable prompt scraps.</h2>
+        <h2 class="sf-section-heading__title">Your skills should outlive the client you wrote them for.</h2>
       </div>
 
       <ComparisonTable :rows="comparisonRows" />
@@ -174,7 +174,7 @@ orchestrator-mcp skills export liquid-glass-enforcer --to ./skillforge-packs"
     <section class="sf-shell sf-section">
       <div class="sf-section-heading">
         <p class="sf-kicker">Open by default</p>
-        <h2 class="sf-section-heading__title">MIT licensed, GitHub native, no hidden backend.</h2>
+        <h2 class="sf-section-heading__title">Apache-2.0 licensed. GitHub native. No hidden backend.</h2>
       </div>
       <OpenSourceBadges />
     </section>

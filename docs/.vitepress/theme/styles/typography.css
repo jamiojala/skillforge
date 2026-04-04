@@ -14,8 +14,7 @@ body {
 }
 
 .Layout {
-  background: var(--sf-gradient-mesh);
-  background-attachment: fixed;
+  background: var(--sf-c-bg);
 }
 
 /* ── Doc prose ── */
@@ -85,32 +84,17 @@ pre,
   font-family: var(--sf-font-mono);
 }
 
-/* ── Gradient text ── */
+/* ── Accent text ── */
 .sf-gradient-text {
-  background: var(--sf-gradient-hero);
-  background-size: 240% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: sf-gradient-shift 9s ease infinite;
+  color: var(--sf-c-primary);
 }
 
 .sf-gradient-text--primary {
-  background: var(--sf-gradient-primary);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: sf-gradient-shift 6s ease infinite;
+  color: var(--sf-c-primary);
 }
 
 .sf-gradient-text--accent {
-  background: var(--sf-gradient-accent);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: sf-gradient-shift 7s ease infinite;
+  color: var(--sf-c-accent);
 }
 
 /* ── Kicker ── */
@@ -119,21 +103,20 @@ pre,
   align-items: center;
   gap: var(--sf-space-2);
   margin: 0;
-  color: var(--sf-c-primary);
+  color: var(--sf-c-text-3);
   font-size: var(--sf-text-xs);
   font-weight: var(--sf-font-bold);
-  letter-spacing: 0.15em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
 .sf-kicker::before {
   content: '';
   flex-shrink: 0;
-  width: 0.5rem;
-  height: 0.5rem;
+  width: 0.375rem;
+  height: 0.375rem;
   border-radius: 50%;
   background: var(--sf-c-primary);
-  box-shadow: 0 0 8px var(--sf-c-primary-glow);
 }
 
 /* ── Lead text ── */

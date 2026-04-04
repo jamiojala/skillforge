@@ -61,7 +61,7 @@
   padding: var(--sf-space-5);
   border: 1px solid var(--sf-c-border);
   border-radius: var(--sf-radius-xl);
-  background: color-mix(in srgb, var(--sf-c-bg-elevated) 94%, transparent);
+  background: var(--sf-c-bg-elevated);
   box-shadow: var(--sf-shadow-sm);
   transition:
     transform var(--sf-transition-base),
@@ -70,33 +70,13 @@
     background var(--sf-transition-base);
 }
 
-/* Subtle texture pattern on all cards */
-.sf-skill-card::before,
-.sf-collection-card::before,
-.sf-resource-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: radial-gradient(circle at top right, rgba(245, 75, 0, 0.05), transparent 40%);
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity var(--sf-transition-base);
-}
-
-.sf-skill-card:hover::before,
-.sf-collection-card:hover::before,
-.sf-resource-card:hover::before {
-  opacity: 1;
-}
-
 .sf-skill-card:hover,
 .sf-collection-card:hover,
 .sf-resource-card:hover,
 .sf-contributor-card:hover,
 .sf-sponsor-tier:hover {
-  transform: translateY(-3px);
-  border-color: color-mix(in srgb, var(--sf-c-primary) 36%, var(--sf-c-border));
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.1);
   box-shadow: var(--sf-shadow-md);
 }
 
@@ -108,16 +88,14 @@
   border-radius: var(--sf-radius-xl) var(--sf-radius-xl) 0 0;
 }
 
-/* ── Featured card glow ── */
+/* ── Featured card ── */
 .sf-skill-card--featured {
-  border-color: color-mix(in srgb, var(--sf-c-primary) 24%, var(--sf-c-border));
-  box-shadow: var(--sf-shadow-glow);
+  border-color: rgba(245, 75, 0, 0.15);
 }
 
 .sf-skill-card--featured:hover {
-  box-shadow:
-    0 0 0 1px rgba(245, 75, 0, 0.4),
-    0 8px 40px rgba(245, 75, 0, 0.24);
+  border-color: rgba(245, 75, 0, 0.25);
+  box-shadow: var(--sf-shadow-glow);
 }
 
 .sf-skill-card--compact {
@@ -246,7 +224,7 @@
 .sf-compatibility__item,
 .sf-chip {
   border: 1px solid var(--sf-c-border);
-  background: color-mix(in srgb, var(--sf-c-bg-elevated) 88%, transparent);
+  background: var(--sf-c-bg-elevated);
   color: var(--sf-c-text-2);
 }
 
@@ -270,7 +248,7 @@
 }
 
 .sf-badge--muted {
-  background: color-mix(in srgb, var(--sf-c-bg-soft) 88%, transparent);
+  background: var(--sf-c-bg-soft);
   color: var(--sf-c-text-2);
 }
 
@@ -323,7 +301,7 @@
   overflow: auto;
   padding: var(--sf-space-4);
   border-radius: var(--sf-radius-lg);
-  background: color-mix(in srgb, var(--sf-c-bg) 90%, transparent);
+  background: var(--sf-c-bg);
 }
 
 /* ── Contributor card ── */
@@ -369,7 +347,7 @@
   gap: var(--sf-space-1);
   padding: var(--sf-space-4);
   border-radius: var(--sf-radius-lg);
-  background: color-mix(in srgb, var(--sf-c-bg) 80%, transparent);
+  background: var(--sf-c-bg);
   color: var(--sf-c-text-1);
   text-decoration: none;
   transition:
@@ -378,7 +356,7 @@
 }
 
 .sf-open-source-badges a:hover {
-  background: color-mix(in srgb, var(--sf-c-bg-soft) 90%, transparent);
+  background: var(--sf-c-bg-soft);
   transform: translateY(-1px);
 }
 

@@ -44,10 +44,10 @@
 
   /* ── Radii ── */
   --sf-radius-sm: 0.375rem;
-  --sf-radius-md: 0.75rem;
-  --sf-radius-lg: 1rem;
-  --sf-radius-xl: 1.5rem;
-  --sf-radius-2xl: 2rem;
+  --sf-radius-md: 0.625rem;
+  --sf-radius-lg: 0.75rem;
+  --sf-radius-xl: 1rem;
+  --sf-radius-2xl: 1.25rem;
   --sf-radius-full: 999px;
 
   /* ── Layout ── */
@@ -91,11 +91,11 @@
   --sf-c-accent-subtle: rgba(99, 102, 241, 0.1);
 
   /* ── Shadows (light) ── */
-  --sf-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
-  --sf-shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
-  --sf-shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.1), 0 6px 16px rgba(0, 0, 0, 0.06);
-  --sf-shadow-glow: 0 0 0 1px rgba(245, 75, 0, 0.2), 0 6px 28px rgba(245, 75, 0, 0.22);
-  --sf-shadow-jade: 0 0 0 1px rgba(0, 201, 167, 0.2), 0 6px 24px rgba(0, 201, 167, 0.14);
+  --sf-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.03);
+  --sf-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.03);
+  --sf-shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+  --sf-shadow-glow: 0 0 0 1px rgba(245, 75, 0, 0.12), 0 4px 20px rgba(245, 75, 0, 0.1);
+  --sf-shadow-jade: 0 0 0 1px rgba(0, 201, 167, 0.12), 0 4px 16px rgba(0, 201, 167, 0.08);
 
   /* ── Semantic ── */
   --sf-c-success: #059669;
@@ -120,17 +120,11 @@
   --sf-c-iot: #65A30D;
 
   /* ── Gradients ── */
-  --sf-gradient-primary: linear-gradient(135deg, #F54B00 0%, #FF6B20 50%, #FFAA60 100%);
-  --sf-gradient-hero: linear-gradient(135deg, #F54B00 0%, #E879F9 50%, #818CF8 100%);
-  --sf-gradient-accent: linear-gradient(135deg, #6366F1 0%, #8B5CF6 50%, #EC4899 100%);
-  --sf-gradient-mesh:
-    radial-gradient(ellipse at 20% 0%, rgba(245, 75, 0, 0.12), transparent 50%),
-    radial-gradient(ellipse at 80% 0%, rgba(99, 102, 241, 0.08), transparent 50%),
-    radial-gradient(ellipse at 50% 100%, rgba(236, 72, 153, 0.06), transparent 50%);
-  --sf-gradient-aurora:
-    radial-gradient(ellipse 90% 70% at 10% -20%, rgba(245, 75, 0, 0.2), transparent),
-    radial-gradient(ellipse 80% 80% at 90% -10%, rgba(99, 102, 241, 0.16), transparent),
-    radial-gradient(ellipse 70% 60% at 50% 110%, rgba(232, 121, 249, 0.1), transparent);
+  --sf-gradient-primary: linear-gradient(135deg, #F54B00 0%, #FF6B20 100%);
+  --sf-gradient-hero: linear-gradient(135deg, #F54B00 0%, #FF6B20 100%);
+  --sf-gradient-accent: linear-gradient(135deg, #6366F1 0%, #818CF8 100%);
+  --sf-gradient-mesh: none;
+  --sf-gradient-aurora: none;
 
   /* ── VitePress token mappings ── */
   --vp-font-family-base: var(--sf-font-sans);
@@ -183,21 +177,13 @@ html.dark {
   --sf-c-border: rgba(255, 255, 255, 0.07);
   --sf-c-border-subtle: rgba(255, 255, 255, 0.04);
 
-  /* ── Dark shadows (stronger) ── */
-  --sf-shadow-sm: 0 2px 12px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.4);
-  --sf-shadow-md: 0 8px 32px rgba(0, 0, 0, 0.6), 0 3px 8px rgba(0, 0, 0, 0.4);
-  --sf-shadow-lg: 0 24px 80px rgba(0, 0, 0, 0.7), 0 8px 24px rgba(0, 0, 0, 0.5);
-  --sf-shadow-glow: 0 0 0 1px rgba(245, 75, 0, 0.28), 0 0 36px rgba(245, 75, 0, 0.18), 0 16px 60px rgba(245, 75, 0, 0.22);
-  --sf-shadow-jade: 0 0 0 1px rgba(0, 201, 167, 0.28), 0 0 28px rgba(0, 201, 167, 0.16);
+  /* ── Dark shadows ── */
+  --sf-shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
+  --sf-shadow-md: 0 4px 20px rgba(0, 0, 0, 0.5), 0 2px 6px rgba(0, 0, 0, 0.3);
+  --sf-shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.6), 0 6px 16px rgba(0, 0, 0, 0.4);
+  --sf-shadow-glow: 0 0 0 1px rgba(245, 75, 0, 0.18), 0 4px 24px rgba(245, 75, 0, 0.12);
+  --sf-shadow-jade: 0 0 0 1px rgba(0, 201, 167, 0.18), 0 4px 20px rgba(0, 201, 167, 0.1);
 
-  /* ── Dark aurora (dimmer) ── */
-  --sf-gradient-aurora:
-    radial-gradient(ellipse 90% 70% at 10% -20%, rgba(245, 75, 0, 0.16), transparent),
-    radial-gradient(ellipse 80% 80% at 90% -10%, rgba(99, 102, 241, 0.14), transparent),
-    radial-gradient(ellipse 70% 60% at 50% 110%, rgba(232, 121, 249, 0.09), transparent);
-
-  --sf-gradient-mesh:
-    radial-gradient(ellipse at 20% 0%, rgba(245, 75, 0, 0.07), transparent 50%),
-    radial-gradient(ellipse at 80% 0%, rgba(99, 102, 241, 0.06), transparent 50%),
-    radial-gradient(ellipse at 50% 100%, rgba(236, 72, 153, 0.04), transparent 50%);
+  --sf-gradient-aurora: none;
+  --sf-gradient-mesh: none;
 }
